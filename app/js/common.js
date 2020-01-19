@@ -91,34 +91,10 @@ const menuModule = (function() {
         }
     });
 
-    const clientsModule = (function() {
 
-        $('#clientsCarouselSlider').flickity({
-            center: true,
-            arrowShape: {
-                x0: 25,
-                x1: 60,
-                y1: 35,
-                x2: 65,
-                y2: 30,
-                x3: 35
-            },
-            on: {
-                ready: function() {
-
-                    let clientsCarouselNav = doc.getElementById('clientsCarouselNav');
-                    let prev = doc.querySelector('#clientsCarouselSlider .flickity-prev-next-button.previous');
-                    let next = doc.querySelector('#clientsCarouselSlider .flickity-prev-next-button.next');
-
-                    clientsCarouselNav.appendChild(prev);
-                    clientsCarouselNav.appendChild(next);
-                },
-            }
-        });
-
-    }());
 
 }());
+
 
 
 const featuresModule = (function() {
@@ -146,3 +122,43 @@ const featuresModule = (function() {
         });
     }
 }());
+const clientsModule = (function(elementSelector) {
+
+    let options = {
+        wrapAround: true,
+        center: false,
+        cellAlign: 'left',
+        arrowShape: {
+            x0: 25,
+            x1: 60,
+            y1: 35,
+            x2: 65,
+            y2: 30,
+            x3: 35
+        },
+        on: {
+            ready: function() {
+
+                let clientsCarouselNav = doc.getElementById('clientsCarouselNav');
+                let prev = doc.querySelector('#clientsCarouselSlider .flickity-prev-next-button.previous');
+                let next = doc.querySelector('#clientsCarouselSlider .flickity-prev-next-button.next');
+
+                clientsCarouselNav.appendChild(prev);
+                clientsCarouselNav.appendChild(next);
+
+                setOverflow(true, '#clientsCarouselSlider');
+            }
+        }
+    }
+
+    function setOverflow(value = false, selectorSlider) {
+        if (value === false) {
+            $(`${selectorSlider} .flickity-viewport`).css('overflow', 'hidden');
+        } else {
+            $(`${selectorSlider} .flickity-viewport`).css('overflow', 'visible');
+        }
+    }
+
+    $(`${elementSelector} `).flickity(options);
+
+}('#clientsCarouselSlider'));
