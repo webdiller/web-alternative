@@ -1,4 +1,5 @@
-// 1
+[github pages](https://webdiller.github.io/web-alternative/)
+<!--// 1
 .welcome
 // 1.1
 .modal-how
@@ -28,3 +29,4 @@
 .socials-list
 .find-us
 .map-link
+-->
