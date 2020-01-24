@@ -139,7 +139,7 @@ figure
     &__nav
         display: flex
         flex-direction: column
-        align-items: flex-end
+        align-items: flex-start
         justify-content: flex-start
     &__order-call
         border: 1px solid #FF834E
@@ -169,7 +169,7 @@ figure
         +reset-ul()
         display: flex
         flex-direction: column
-        align-items: flex-end
+        align-items: flex-start
         justify-content: flex-start
     &__list-item
         padding: 5px 0
@@ -200,6 +200,9 @@ figure
         align-items: center
         justify-content: flex-start
         position: relative
+        max-width: 1430px
+        margin: 0 auto
+        max-height: 970px
     &__type
         position: relative
         font-style: normal
@@ -243,10 +246,6 @@ figure
         align-items: center
         justify-content: center
         padding-bottom: 50px
-        &--bg
-            display: none
-            &::before
-                display: none
         &::before
             content: ""
             position: absolute
@@ -263,9 +262,6 @@ figure
         position: relative
         z-index: 10
         top: 20px
-        &--bg
-            max-width: 100%
-            width: 350px
     &__btn-with-text
         order: 4
     &__text
@@ -309,16 +305,14 @@ figure
     position: fixed
     right: 50%
     top: 50%
-    transform: translate(50%, -55%)
+    transform: translate(50%, -52%)
     background: #262626
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3)
     border-radius: 3px
-    z-index: 1000
     width: 100%
     max-width: 594px
     opacity: 0
     visibility: hidden
-    z-index: -1
     transition: all .3s ease
     &__overlay
         position: absolute
@@ -327,19 +321,22 @@ figure
         left: 0
         bottom: 0
         background-color: rgba(0,0,0,.4)
-        transition: all .3s ease
+        transition: all .2s ease
         backdrop-filter: blur(0)
-        z-index: -1
         visibility: hidden
         &.active
+            z-index: 1000
             visibility: visible
-            z-index: 100
             backdrop-filter: blur(15px)
     &.active
         opacity: 1
-        z-index: 1000
+        z-index: 10000
         visibility: visible
         transform: translate(50%, -50%)
+        .modal-how__title
+            color: #FFFFFF
+        .modal-how__text
+            color: #FFFFFF
     &__wrapper
         padding: 62px 33px 61px 33px
         position: relative
@@ -356,15 +353,16 @@ figure
         font-weight: 600
         font-size: 26px
         line-height: 41px
-        color: #FFFFFF
+        color: transparent
         padding-bottom: 30px
+        transition: all .1s ease
     &__text
         font-style: normal
         font-weight: normal
         font-size: 18px
         line-height: 29px
-        color: #FFFFFF
-
+        color: transparent
+        transition: all .1s ease
 
 // 2
 .how-road
@@ -376,7 +374,7 @@ figure
     &__count
         position: absolute
         font-style: normal
-        font-weight: 600
+        font-weight: 700
         font-size: 118px
         line-height: 144px
         text-align: center
@@ -385,6 +383,7 @@ figure
         top: -35%
         left: 65%
         z-index: -1
+        transition: all .3s ease 
     &__item
         position: relative
         flex-basis: 50%
@@ -426,6 +425,9 @@ figure
                 top: 0
                 visibility: visible
                 z-index: 10
+            .how-road__count
+                color: #EF8B54
+                opacity: 1
     &__circle
         background: #1D1D1D
         box-shadow: 2px 5px 20px
@@ -648,6 +650,7 @@ figure
         line-height: 41px
         color: #FFFFFF
         padding-bottom: 40px
+        max-width: 588px
     &__descr
         font-style: normal
         font-weight: normal
@@ -655,6 +658,7 @@ figure
         line-height: 29px
         color: #FFFFFF
         padding-bottom: 45px
+        max-width: 588px
     &__images
         text-align: center
     &__small-image
@@ -708,6 +712,8 @@ figure
         position: relative
         min-height: 500px
         overflow-x: hidden
+        max-width: 1070px
+        margin: 0 auto
     &__d-item
         position: absolute
         top: 0
@@ -751,6 +757,7 @@ figure
             right: 0
             left: 0
             bottom: 0
+            color: transparent
     &__title
         font-family: Roboto-ex
         font-style: normal
@@ -759,6 +766,7 @@ figure
         line-height: 26px
         color: #FFFFFF
         padding-bottom: 8.49px
+        text-align: left
     &__descr
         font-family: Roboto-ex
         font-style: normal
@@ -766,6 +774,7 @@ figure
         font-size: 15.2738px
         line-height: 18px
         color: #ffffffcc
+        text-align: left
     &__separator
         display: block
         width: 100%
@@ -794,14 +803,13 @@ figure
         font-size: 12px
         color: #FFFFFF
         background: #50386F
-        height: 45px
+        height: 100%
     &__strong
         text-transform: uppercase
         font-weight: 600
         padding: 0 4px
     &__btn
         +reset-btn
-        height: 45px
         padding: 0 55px 0 20px
         font-style: normal
         font-weight: normal
@@ -811,6 +819,7 @@ figure
         background: linear-gradient(170.25deg, #8D5DCC -128.51%, #55329E 221.38%)
         box-shadow: 0px 5px 10px rgba(94, 56, 158, 0.35)
         position: relative
+        height: 100%
         &::before
             content: ""
             position: absolute
@@ -879,6 +888,8 @@ figure
     &__wrapper
         position: relative
         padding: 70px 20px 40px 20px
+        max-width: 1430px
+        margin: 0 auto
     &__title
         font-style: normal
         font-weight: normal
@@ -914,6 +925,8 @@ figure
     &__wrapper
         padding: 100px 50px 60px 50px
         text-align: center
+        max-width: 1430px
+        margin: 0 auto
     &__title
         font-style: normal
         font-weight: 400
@@ -924,7 +937,7 @@ figure
 
 .clients-carousel
     &__slider
-        padding-bottom: 55.5px
+        padding-bottom: 50px
         text-align: center
     &__cell
         text-align: center
@@ -933,7 +946,7 @@ figure
         counter-increment: clients-carousel
         &::before
             display: none
-            content: counter(clients-carousel)
+            content: counter(clients-carousel, decimal-leading-zero)
             position: absolute
             font-style: normal
             font-weight: bold
@@ -992,6 +1005,8 @@ figure
     &__wrapper
         padding: 60px 23px 85px 17px
         position: relative
+        max-width: 1430px
+        margin: 0 auto
     &__title
         font-style: normal
         font-weight: bold
@@ -1057,6 +1072,82 @@ figure
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1)
         border-radius: 2px
         padding: 15px 10px
+    &__alert
+        position: absolute
+        top: 50%
+        right: 50%
+        transform: translate(50%, -30%) 
+        width: 40%
+        min-width: 260px
+        min-height: 40%
+        padding: 15px 10px 15px 15px
+        box-sizing: border-box
+        box-shadow: 2px 2px 10px rgba(0,0,0,.1)
+        border-radius: 2px
+        transition: all .3s ease
+        opacity: 0
+        visibility: hidden
+        &.active
+            opacity: 1
+            visibility: visible
+            transform: translate(50%, -50%)
+        &.success
+            background-image: linear-gradient(to right top, rgba(129, 240, 168, .95), rgba(117, 243, 158, .95), rgba(106, 245, 148, .95), rgba(94, 248, 136, .95), rgba(82, 250, 124, .8))
+        &.error
+            background-image: linear-gradient(to right top, rgba(255, 51, 10,.95), rgba(253, 58, 36,.95), rgba(251, 66, 54,.95), rgba(247, 74, 69,.95), rgba(242, 82, 82, .8))
+        &-head
+            display: flex
+            align-items: flex-start
+            justify-content: space-between
+        &-title
+            display: block
+            font-style: normal
+            font-weight: 600
+            font-size: 16px
+            color: #fff
+            padding-bottom: 30px
+            text-shadow: 1px 1px 0px #c1c1c1
+            letter-spacing: 1px
+        &-icon
+            color: #fff
+            font-size: 18px
+            &::before
+                margin: 0
+                padding: 0
+        &-close
+            +reset-btn
+            color: #fff
+            font-weight: 900
+            border-radius: 50%
+            width: 28px
+            height: 28px
+            display: flex
+            align-items: center
+            justify-content: center
+            background: rgba(0,0,0,.2)
+            transition: all .3s ease
+            &:hover
+                background: rgba(0,0,0,.1)
+        &-descr
+            display: block
+            font-style: normal
+            font-weight: 400
+            font-size: 12px
+            color: #fff
+            padding-bottom: 30px
+            text-shadow: 1px 1px 0px #c1c1c1
+            letter-spacing: 1px
+        &-btn
+            +reset-btn
+            background: rgba(0,0,0,.2)
+            border-radius: 2px
+            padding: 5px 15px
+            color: #fff
+            text-shadow: 1px 1px 0px #c1c1c1
+            letter-spacing: 1px
+            transition: all .3s ease
+            &:hover
+                background: rgba(0,0,0,.1)
     &__input
         background: #F6F6F6
         border: 0.5px solid #D0D0D0
@@ -1090,10 +1181,10 @@ figure
             line-height: 17px
             color: #595959
     &__group
-        padding-bottom: 15px
     &__recaptcha
-        padding-bottom: 14.5px
-        opacity: 0
+        margin-bottom: 14.5px
+        opacity: 1
+        background: #F6F6F6
     &__btn
         +reset-btn
         font-style: normal
@@ -1109,6 +1200,7 @@ figure
         min-height: 45px
         padding: 0 15px
         width: 100%
+    &__field
 
 
 .feedback-group
@@ -1131,6 +1223,10 @@ figure
         line-height: 12px
         color: #FFFFFF
         position: relative
+        cursor: pointer
+        padding-bottom: 15px
+        flex-grow: 1
+        -webkit-tap-highlight-color: transparent
         &::before
             content: ""
             position: absolute
@@ -1174,6 +1270,8 @@ figure
 .footer
     background: #2E2E2E
     &__wrapper
+        max-width: 1430px
+        margin: 0 auto
         padding: 50px 40px
         display: flex
         flex-direction: column

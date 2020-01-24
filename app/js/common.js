@@ -84,7 +84,6 @@ const menuModule = (function() {
     window.addEventListener("resize", function() {
         let w = this.innerWidth;
         if (w >= 997) {
-            console.log('3');
             headerWrapper.appendChild(headerNav);
         } else if (w <= 997) {
             headerOverlay.appendChild(headerNav);
@@ -94,7 +93,6 @@ const menuModule = (function() {
 
 
 }());
-
 
 
 const featuresModule = (function() {
@@ -122,6 +120,8 @@ const featuresModule = (function() {
         });
     }
 }());
+
+
 const clientsModule = (function(elementSelector) {
 
     let options = {
@@ -153,12 +153,55 @@ const clientsModule = (function(elementSelector) {
 
     function setOverflow(value = false, selectorSlider) {
         if (value === false) {
-            $(`${selectorSlider} .flickity-viewport`).css('overflow', 'hidden');
+            $(`${selectorSlider} .flickity-viewport`).css('overflow-y', 'hidden');
         } else {
-            $(`${selectorSlider} .flickity-viewport`).css('overflow', 'visible');
+            $(`${selectorSlider} .flickity-viewport`).css('overflow-y', 'visible');
         }
     }
 
     $(`${elementSelector} `).flickity(options);
 
 }('#clientsCarouselSlider'));
+
+
+const feedbackFormModule = (function() {
+    let form = doc.getElementById('feedbackForm'),
+        feedbackFormName = doc.getElementById('feedbackFormName'),
+        feedbackFormPhone = doc.getElementById('feedbackFormPhone'),
+        feedbackFormText = doc.getElementById('feedbackFormText'),
+        feedbackFormAgree = doc.getElementById('feedbackFormAgree'),
+        feedbackFormBtn = doc.getElementById('feedbackFormBtn'),
+        feedbackFormAlert = doc.getElementById('feedbackFormAlert'),
+        feedbackFormAlertTitle = doc.getElementById('feedbackFormAlertTitle'),
+        feedbackFormAlertDescr = doc.getElementById('feedbackFormAlertDescr'),
+        feedbackFormAlertBtn = doc.getElementById('feedbackFormAlertBtn');
+
+    var res = {};
+    var alertData = {
+        succes: {
+            title: "Отправлено",
+            descr: "Спасибо за отправку",
+            button: "Ок"
+        },
+        error: {
+            title: "Заполните поля",
+            descr: "Одно или несколько полей не заполнены",
+            button: "Ок"
+        },
+    }
+
+    feedbackFormBtn.addEventListener('click', function() {
+        res.name = feedbackFormName.value;
+        res.phone = feedbackFormPhone.value;
+        res.text = feedbackFormText.value;
+        res.agree = feedbackFormAgree.checked;
+        console.log({ res });
+    });
+
+    function isFieldsEmpty() {
+
+    }
+
+    $(".lazyload").lazyload();
+
+}());
