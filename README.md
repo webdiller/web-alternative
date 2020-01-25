@@ -1,10 +1,11 @@
-#web-alternative   
+# web-alternative   
 Example web project where you can see mobile first aproach   
 [Go to github pages](https://webdiller.github.io/web-alternative/)   
 
-#web-alternative   
+# web-alternative   
 Личный проект - версткой сайта c подходом mobile-first    
 [Перейти на сайт проекта](https://webdiller.github.io/web-alternative/)
+
 <!--// 1
 .welcome
 // 1.1
