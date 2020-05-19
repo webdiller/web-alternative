@@ -66,7 +66,6 @@ const menuModule = (function() {
         headerNav = doc.getElementById('headerNav');
 
     headerMenuBtn.addEventListener('click', function() {
-        debugger;
         headerMenuBar.classList.toggle('disabled');
         headerMenuClose.classList.toggle('active');
         headerOverlay.classList.toggle('active');
